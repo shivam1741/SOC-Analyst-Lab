@@ -3,10 +3,9 @@
 ## What is SIEM?
 
 * **SIEM = Security Information and Event Management**
-
 * It is a security system that collects, analyzes, and monitors logs from different sources to detect threats.
-* In one line:   
-> SIEM = Central brain that watches everything happening in your IT system
+* In one line:  
+  > SIEM = Central brain that watches everything happening in your IT system
 
 
 ## Why SIEM is used?
@@ -50,10 +49,10 @@ SIEM collects logs from:
 ## Important Components of SIEM
 
 ### 1. Log Collection
-* Collect logs from different devices
+* Collect logs from different Network devices, Security devices, Servers, Applications, and databases.
 
 ### 2. Log Normalization
-* Convert logs into a **common format**
+* Convert logs into a **common format** or Convert logs to unreadable to readable form.
 **Example:**
 Different logs → Same structur
 
