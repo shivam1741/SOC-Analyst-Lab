@@ -132,3 +132,32 @@ SIEM detects: **Possible brute-force attack**
 * **Incident** → Confirmed attack
 * **Correlation** → Linking events
 ---
+
+# Correlation (SIEM)
+
+## Correlation
+
+In SIEM tools, every second we receive **thousands or even millions of logs continuously**, and it is not possible for humans to monitor each log manually.
+So, a concept called **correlation** is used.
+
+Correlation helps in **analyzing multiple logs together** and identifying meaningful patterns or suspicious activities.
+
+By writing **correlation rules**, we can:
+
+* Detect attacks automatically
+* Reduce manual effort
+* Identify real threats from huge data
+
+These rules are written using SIEM query languages like:
+
+* Splunk → SPL
+* Microsoft Sentinel → KQL
+
+
+### Final Line:
+
+**Correlation in SIEM = combining multiple logs using rules to detect security incidents efficiently**
+
+---
+
+
