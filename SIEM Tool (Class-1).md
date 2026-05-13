@@ -26,6 +26,7 @@ Companies use SIEM to:
 * Helps in historical analysis
 * **Example:** What happened 2 days ago?
 
+
 ### 2. SEM (Security Event Management)
 
 * Works in real-time
@@ -51,22 +52,27 @@ SIEM collects logs from:
 ### 1. Log Collection
 * Collect logs from different Network devices, Security devices, Servers, Applications, and databases.
 
-### 2. Log Normalization
+### 2. Log Parsing
+* Parsing is nothing but the breaking down the events into the rows and colums.
+* After parsing the logs what we see is called Parsed logs.
+
+### 3. Log Normalization
+* Normalization is the mapping of devices specific field set with the SIEM defined common field set.
 * Convert logs into a **common format** or Convert logs to unreadable to readable form.
 **Example:**
 Different logs → Same structur
 
-### 3. Correlation Engine (Very Important)
+### 4. Correlation Engine (Very Important)
 * Connects multiple events to detect attacks
 **Example:** 5 failed logins + 1 success → Suspicious
 
-### 4. Alerting
+### 5. Alerting
 * Sends alert when something suspicious happens
 
-### 5. Dashboard
+### 6. Dashboard
 * Shows real-time security status
 
-### 6. Storage
+### 7. Storage
 * Stores logs for months/years
 
 
