@@ -59,7 +59,17 @@ A full Splunk Enterprise instance configured to forward data.
 Simple Definition
 > Heavy Forwarder is a Splunk Enterprise instance that can parse, transform, and forward data.
 
-Let's Understand Syslog First
+## Example Scenario
+
+* You have 100 Windows servers.
+> Install a Universal Forwarder on each server.   
+> Each UF sends logs to a central Indexer.
+
+* If you need to filter or modify logs before indexing:
+> Send data to a Heavy Forwarder first.   
+> The HF processes and forwards the data to the Indexer.
+
+Now Let's Understand about Syslog 
 
 ---
 # Note:(Syslog)
@@ -97,9 +107,9 @@ So they use Syslog.
 ## Syslog
 * Syslog (System Logging Protocol) is a standard method used by devices and operating systems to generate and send log messages to a central server.
 * Protocols Used
-  > UDP 514
-  > TCP 514
-  > LS 6514
+  > UDP 514   
+  > TCP 514   
+  > TLS (Transport Layer Security) 6514
 
 Simple Definition
 > Syslog is a protocol used to send logs from devices such as firewalls, routers, switches, and Linux servers to a centralized log server.
