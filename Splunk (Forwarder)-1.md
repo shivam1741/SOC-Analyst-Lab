@@ -1,4 +1,4 @@
-# Splunk-1
+# Splunk (Forwarder)-1
 
 ### Splunk 
 Splunk is used as
