@@ -1,5 +1,5 @@
-
-# Why We Never Modify the `default` Folder
+# Splunk Backend file(Default and Local)
+## Why We Never Modify the `default` Folder
 
 Splunk apps typically have two folders:
 
@@ -22,7 +22,7 @@ local/
 
 
 
-# Problem with Editing `default`
+## Problem with Editing `default`
 
 Suppose you edit:
 
@@ -39,7 +39,7 @@ Your changes may be lost because the `default` folder gets replaced.
 
 
 
-# Why Copy to `local`
+## Why Copy to `local`
 
 Instead, copy the relevant stanza to:
 
@@ -52,7 +52,7 @@ Then make your changes there.
 This preserves your custom configuration.
 
 
-# How Splunk Uses Both Files
+## How Splunk Uses Both Files
 
 Splunk merges configuration files using precedence rules.
 
@@ -64,7 +64,7 @@ Priority (highest to lowest):
 So if the same setting exists in both places, the value in `local/` wins.
 
 
-# Example
+## Example
 
 ### `default/inputs.conf`
 
@@ -93,7 +93,7 @@ Only the changed setting is overridden; everything else is inherited from `defau
 
 
 
-# Real-Life Analogy
+## Real-Life Analogy
 
 Think of `default/` as the original blueprint of a house.
 
@@ -106,7 +106,7 @@ Think of `default/` as the original blueprint of a house.
 The original blueprint stays intact, but your customizations override it.
 
 
-#  Benefits of Using `local`
+##  Benefits of Using `local`
 
 * Safe during upgrades
 * Easy to identify your changes
@@ -114,7 +114,7 @@ The original blueprint stays intact, but your customizations override it.
 * Follows Splunk best practices
 
 
-# Short Definition for Notes
+## Short Definition for Notes
 
 > In Splunk, custom configuration changes should be made in the `local` directory instead of the `default` directory because files in `default` may be overwritten during upgrades. Splunk gives higher priority to settings in `local`, so those values override the defaults.   
 > We do not modify the `default` files because they are system-provided and can be replaced during upgrades. We copy the required configuration to the `local` folder and make changes there. Splunk reads both folders and uses the values from `local` whenever the same setting exists in both places.
