@@ -121,11 +121,10 @@ On a Universal Forwarder, the most common files are:
 | `outputs.conf`          | `$SPLUNK_HOME/etc/system/local/outputs.conf`          |
 | `deploymentclient.conf` | `$SPLUNK_HOME/etc/system/local/deploymentclient.conf` |
 
----
 
-## 🔍 How to Find the Effective Configuration
+## How to Find the Effective Configuration
 
-```bash
+```
 splunk btool indexes list --debug
 splunk btool inputs list --debug
 splunk btool outputs list --debug
@@ -133,19 +132,11 @@ splunk btool savedsearches list --debug
 ```
 
 This shows:
-
 * The final value used by Splunk
 * The exact file path where it came from
 
----
 
-# 📝 Short Notes Version
-
-> Splunk stores GUI and manual configuration changes in `.conf` files under `$SPLUNK_HOME/etc/system/local/` or `$SPLUNK_HOME/etc/apps/<app_name>/local/`. For example, indexes are stored in `indexes.conf`, data inputs in `inputs.conf`, saved searches in `savedsearches.conf`, and field extractions in `props.conf` and `transforms.conf`.
-
----
-
-# ⭐ Most Important Files to Memorize
+## Most Important Files to Memorize
 
 * `$SPLUNK_HOME/etc/system/local/indexes.conf`
 * `$SPLUNK_HOME/etc/system/local/inputs.conf`
