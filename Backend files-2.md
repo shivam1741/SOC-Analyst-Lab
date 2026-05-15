@@ -2,21 +2,14 @@
 ---
 ## Important Splunk Configuration Files and Their Full Locations
 
-> **Base path:**
-> `$SPLUNK_HOME = /opt/splunk` on Linux
+> **Base path:**    
+> `$SPLUNK_HOME = /opt/splunk` on Linux    
 > `C:\Program Files\Splunk` on Windows
 
-Most GUI changes are written to:
-
-```
-$SPLUNK_HOME/etc/system/local/
-```
-
-or
-
-```text
-$SPLUNK_HOME/etc/apps/<app_name>/local/
-```
+* Most GUI changes are written to:   
+> `$SPLUNK_HOME/etc/system/local/`   
+or   
+> `$SPLUNK_HOME/etc/apps/<app_name>/local/`
 
 
 ## Core Configuration Backend Files locations
@@ -86,7 +79,7 @@ $SPLUNK_HOME/etc/apps/search/local/savedsearches.conf
 
 ## Index Example
 
-If you create an index named `security`
+If you create an index named `security` then it configurations will store in below both locations.
 ```
 $SPLUNK_HOME/etc/system/local/indexes.conf
 ```
@@ -94,15 +87,20 @@ And
 ```
 $SPLUNK_HOME/etc/apps/search/local/indexes.conf
 ```
-### Common Locations for indexes.conf
+### Common Locations for indexes.conf and Data of indexes
 
-Splunk may store index definitions in:
+* Splunk may store index definitions or configurations in:
 ```
 $SPLUNK_HOME/etc/apps/search/local/indexes.conf
 $SPLUNK_HOME/etc/system/local/indexes.conf
 $SPLUNK_HOME/etc/apps/<custom_app>/local/indexes.conf
 ```
 All are valid.
+* But Splunk store index data (hot/warm/cold) in
+```
+C:\Program Files\Splunk\var\lib\splunk
+```
+
 
 ## Data Input Example
 
