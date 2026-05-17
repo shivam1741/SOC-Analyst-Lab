@@ -229,3 +229,114 @@ Hot → Warm → Cold → Frozen → Thawed.
 ### Which Port Does the Indexer Use to Receive Data?
 
 TCP 9997.
+---
+
+# Note (Metadata)
+
+## What Is Metadata in Splunk?
+
+* Metadata is information about each event that describes the event but is not necessarily part of the raw log text itself.
+* Splunk automatically attaches metadata to every event.
+
+
+## Main Metadata Fields
+
+| Metadata Field | Meaning                                                 |
+| -------------- | ------------------------------------------------------- |
+| `host`         | The system that generated the event                     |
+| `source`       | The file path, input, or source that produced the event |
+| `sourcetype`   | The format/type of the data                             |
+| `index`        | The index where the event is stored                     |
+| `_time`        | The timestamp of the event                              |
+
+
+## Example
+
+### Raw Event
+
+```
+May 17 10:30:15 FW01 %ASA-6-302013: Built outbound TCP connection...
+```
+
+### Metadata Attached by Splunk
+
+* `host = FW01`
+* `source = udp:514`
+* `sourcetype = cisco:asa`
+* `index = network`
+* `_time = 2026-05-17 10:30:15`
+
+
+# Why Metadata Is Important
+
+Metadata allows Splunk to:
+
+* Organize data
+* Search efficiently
+* Apply parsing rules
+* Extract fields
+* Drive dashboards and alerts
+
+
+## What Is Sourcetype?
+
+* Sourcetype is a metadata field that tells Splunk what kind of log format it is receiving.
+
+Examples:
+
+* `cisco:asa`
+* `WinEventLog:Security`
+* `linux_secure`
+* `pan:traffic`
+
+
+## Why Sourcetype Must Match the Add-on's Sourcetype
+
+* Splunk add-ons are built to recognize specific sourcetypes.
+* Inside an add-on, configuration files such as `props.conf` and `transforms.conf` are written under those exact sourcetype names.
+
+
+## Example
+
+The Cisco ASA add-on may contain:
+
+```
+[cisco:asa]
+REPORT-extractions = cisco_asa_fields
+```
+
+This means these field extractions run only when:
+
+```
+sourcetype = cisco:asa
+```
+
+## If Sourcetype Does Not Match
+
+Suppose you ingest the same logs using:
+
+```
+sourcetype = my_firewall_logs
+```
+
+Then:
+
+* Data is indexed.
+* The add-on does not recognize it.
+* Fields are not extracted.
+* Dashboards may not work.
+* CIM mappings may fail.
+
+
+## Real-Life Analogy
+
+Imagine a hospital.
+
+* Raw log = patient
+* Metadata = patient ID card
+* Sourcetype = department label (Cardiology, Neurology)
+* Add-on = doctor specialized for that department
+
+If the label is wrong, the patient goes to the wrong doctor.
+
+---
