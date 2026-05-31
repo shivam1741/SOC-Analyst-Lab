@@ -13,4 +13,4 @@ Now we'll learn how we can control or configure the splunk from Backend, from th
 * [Splunk Backend file-2](https://github.com/shivam1741/SOC-Analyst-Lab/blob/main/Backend%20files-2.md)
 
 Now from here we'll see the actual work of SOC analyst such as logs searching using SPL or search query, logs monitering, and Threat hunting over the search head.
-* 
+* [Field operators like =, <,>, etc. and Boolean operators]()
