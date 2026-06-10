@@ -8,6 +8,8 @@ A practical SOC training repository focused on log analysis, SIEM (Splunk), thre
 * [Splunk (Forwarder)-1](https://github.com/shivam1741/SOC-Analyst-Lab/blob/main/Splunk%20(Forwarder)-1.md)
 * [Splunk (Indexer)- 2](https://github.com/shivam1741/SOC-Analyst-Lab/blob/main/Splunk%20(Indexer)-%202.md)
 
+* [[Email Spoofing (SPF,DKIM,DMARC)]()
+
 Now we'll learn how we can control or configure the splunk from Backend, from the follwoing section we'll learn concepts and then uses
 * [Splunk Backend file(Default and Local)](https://github.com/shivam1741/SOC-Analyst-Lab/blob/main/Backend%20file-1.md)
 * [Splunk Backend file-2](https://github.com/shivam1741/SOC-Analyst-Lab/blob/main/Backend%20files-2.md)
